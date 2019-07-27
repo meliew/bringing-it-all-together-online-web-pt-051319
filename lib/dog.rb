@@ -57,13 +57,13 @@ class Dog
   end
 
 def self.find_by_id
-end 
+end
 
-def self.find_or_create_by 
-end 
+def self.find_or_create_by
+end
 
 def self.find_by_name
-end 
+end
 
 def update
 end 
