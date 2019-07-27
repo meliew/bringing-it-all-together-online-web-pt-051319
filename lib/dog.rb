@@ -58,9 +58,12 @@ class Dog
   end
 
   def self.find_by_id(id)
-    row = DB[:conn].execute("SELECT * FROM dogs WHERE id = ?", id)
-    row
-
+    sql = <<-SQL 
+    SELECT * FROM dogs WHERE ID = ?
+    SQL
+    DB[:conn].execute(sql, id).collect do |row|
+    self.new_from_db(row)
+  end.first
   end
 
   def self.find_or_create_by
