@@ -42,7 +42,7 @@ class Dog
   def self.create(attributes_hash)
     new_dog = self.new(attributes_hash)
     new_dog.save
-    new_dog  
+    new_dog
   end
 
 
@@ -58,7 +58,7 @@ class Dog
   end
 
   def self.find_by_id(id)
-    sql = <<-SQL 
+    sql = <<-SQL
     SELECT * FROM dogs WHERE ID = ?
     SQL
     DB[:conn].execute(sql, id).collect do |row|
