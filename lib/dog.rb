@@ -59,7 +59,7 @@ class Dog
   def self.find_by_id(id)
     row = DB[:conn].execute("SELECT * FROM dogs WHERE id = ?", id)
     row
-    
+
   end
 
   def self.find_or_create_by
